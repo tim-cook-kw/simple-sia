@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Student;
 class StudentController extends Controller
 {
     /**
@@ -34,7 +34,24 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = new \App\Student;
+
+        $student->full_name = $request->get('full_name');
+        $student->gender = json_encode($request->get('gender'));
+        $student->place_of_birth = $request->get('place_of_birth');
+        $student->birth = $request->get('birth');
+        $student->phone = $request->get('phone');
+        $student->email = $request->get('email');
+        $student->religion = $request->get('religion');
+        $student->nasionality = $request->get('nasionality');
+        $student->address = $request->get('address');
+        $student->country = $request->get('country');
+        $student->state = $request->get('state');
+        $student->zip = $request->get('zip');
+        $student->save();
+
+
+        return redirect()->route('student.create')->with('status', 'Student successfully created.');
     }
 
     /**

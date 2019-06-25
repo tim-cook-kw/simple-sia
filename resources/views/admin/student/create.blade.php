@@ -3,59 +3,43 @@
 @section("content")
 
   <div class="col-md-8">
-    <form enctype="multipart/form-data" class="bg-white shadow-sm p-3"  method="POST">
+        @if(session('status'))
+        <div class="alert alert-success">
+          {{session('status')}}
+        </div>
+      @endif 
+    <form enctype="multipart/form-data" class="bg-white shadow-sm p-3" action="{{route('student.store')}}" method="POST">
       @csrf
-        <label for="name">First Name :</label>
-            <input class="form-control" placeholder="Full Name" type="text" name="name" id="name"/><br>
-        <label for="username">Username</label>
-            <input class="form-control" placeholder="username" type="text" name="username" id="username"/><br>
-                <label for="">Roles</label><br>
-                <input type="checkbox" name="roles[]" id="ADMIN" value="ADMIN"> 
-                    <label for="ADMIN">Administrator</label>
-                <input type="checkbox" name="roles[]" id="TEACHER" value="TEACHER"> 
-                    <label for="STAFF">Teacher</label>
-                <input type="checkbox" name="roles[]" id="STUDENT" value="STUDENT"> 
-                    <label for="CUSTOMER">Student</label>
+        <label for="name">Full Name :</label>
+            <input class="form-control" type="text" name="full_name" id="name"/><br>
+        <label for="">Gender :</label><br>
+            <input type="checkbox" name="roles[]" id="male" value="male"> 
+                <label for="male">Male</label>
+                    <input type="checkbox" name="roles[]" id="female" value="female"> 
+                <label for="female">Female</label>
                     <br><br>
-                <label for="phone">Phone number</label> 
-      <br>
-      <input type="text" name="phone" class="form-control">
-      <br>
-      <label for="address">Address</label>
-      <textarea name="address" id="address" class="form-control"></textarea>
-      <br>
-
-      <label for="email">Email</label>
-      <input 
-        class="form-control" 
-        placeholder="user@mail.com" 
-        type="text" 
-        name="email" 
-        id="email"/>
-      <br>
-
-      <label for="password">Password</label>
-      <input 
-        class="form-control" 
-        placeholder="password" 
-        type="password" 
-        name="password" 
-        id="password"/>
-      <br>
-
-      <label for="password_confirmation">Password Confirmation</label>
-      <input 
-        class="form-control" 
-        placeholder="password confirmation" 
-        type="password" 
-        name="password_confirmation" 
-        id="password_confirmation"/>
-      <br>
-
-      <input 
-        class="btn btn-primary" 
-        type="submit" 
-        value="Save"/>
+        <label for="place_of_birth">Place of birth :</label><br>
+            <input type="text" name="place_of_birth" class="form-control"><br>
+        <label for="birth">Date of birth :</label>
+            <input type="date" name="birth" id="birth" class="form-control"></input><br>
+        <label for="phone">Phone :</label><br>
+            <input type="text" name="phone" class="form-control"><br>
+        <label for="email">Email :</label>
+            <input class="form-control" placeholder="user@mail.com" type="text" name="email" id="email"/><br>
+        <label for="religion">Religion :</label>
+            <input class="form-control" name="religion" id="religion"/><br>
+        <label for="nasionality">Nasionality :</label>
+            <input class="form-control" name="nasionality" id="nasionality"/><br>
+        <label for="address">Address :</label>
+            <input class="form-control" name="address" id="address"/><br> 
+        <label for="country">Country :</label>
+            <input class="form-control" name="country" id="country"/><br>
+        <label for="state">State :</label>
+            <input class="form-control" name="state" id="state"/><br>
+        <label for="zip">Zip :</label>
+            <input class="form-control" name="zip" id="zip"/><br>
+            <br><br>
+      <input class="btn btn-primary" type="submit" value="Save"/>
     </form>
   </div>
 
