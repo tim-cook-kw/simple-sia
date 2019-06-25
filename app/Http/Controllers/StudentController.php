@@ -13,7 +13,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $student = \App\Student::paginate(4);
+
+        return view('admin.student.index', ['student' => $student]);
     }
 
     /**
