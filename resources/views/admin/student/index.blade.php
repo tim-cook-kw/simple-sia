@@ -7,6 +7,18 @@
     {{session('status')}}
   </div>
 @endif 
+<div class="row">
+    <div class="col-md-12">
+    <form action="{{route('student.index')}}">
+        <div class="input-group mb-5">
+        <input value="{{Request::get('keyword')}}" name="keyword" class="form-control col-md-10" type="text" placeholder="Filter berdasarkan email"/>
+            <div class="input-group-append">
+                <input type="submit" value="Filter" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
 <table class="table table-bordered">
         <thead>
           <tr>
