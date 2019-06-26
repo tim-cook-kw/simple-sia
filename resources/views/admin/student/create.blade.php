@@ -13,19 +13,19 @@
         <label for="name">Full Name :</label>
             <input class="form-control" type="text" name="full_name" id="name"/><br>
         <label for="">Gender :</label><br>
-            <input type="checkbox" name="roles[]" id="male" value="male"> 
-                <label for="male">Male</label>
-                    <input type="checkbox" name="roles[]" id="female" value="female"> 
-                <label for="female">Female</label>
+           <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+           </select>
                     <br><br>
         <label for="place_of_birth">Place of birth :</label><br>
             <input type="text" name="place_of_birth" class="form-control"><br>
         <label for="birth">Date of birth :</label>
             <input type="date" name="birth" id="birth" class="form-control"></input><br>
         <label for="phone">Phone :</label><br>
-            <input type="text" name="phone" class="form-control"><br>
+            <input type="number" name="phone" class="form-control"><br>
         <label for="email">Email :</label>
-            <input class="form-control" placeholder="user@mail.com" type="text" name="email" id="email"/><br>
+            <input class="form-control" placeholder="user@mail.com" type="email" name="email" id="email"/><br>
         <label for="religion">Religion :</label>
             <input class="form-control" name="religion" id="religion"/><br>
         <label for="nasionality">Nasionality :</label>
@@ -34,10 +34,8 @@
             <input class="form-control" name="address" id="address"/><br> 
         <label for="country">Country :</label>
             <input class="form-control" name="country" id="country"/><br>
-        <label for="state">State :</label>
-            <input class="form-control" name="state" id="state"/><br>
         <label for="zip">Zip :</label>
-            <input class="form-control" name="zip" id="zip"/><br>
+            <input class="form-control" name="zip" type="number" id="zip"/><br>
             <br><br>
       <input class="btn btn-primary" type="submit" value="Save"/>
     </form>

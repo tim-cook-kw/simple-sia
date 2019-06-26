@@ -25,7 +25,6 @@ class Student extends Migration
             $table->string('nasionality');
             $table->string('address');
             $table->string('country');
-            $table->string('state');
             $table->string('zip');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

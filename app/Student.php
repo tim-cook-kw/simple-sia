@@ -18,7 +18,6 @@ class Student extends Model
         'nasionality',
         'address',
         'country',
-        'state',
         'zip'
     ];
 

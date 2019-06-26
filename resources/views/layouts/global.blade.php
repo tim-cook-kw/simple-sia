@@ -41,7 +41,7 @@
             <button class="btn btn-link d-block d-md-none" data-toggle="collapse" data-target="#sidebar-nav" role="button" >
                 <span class="oi oi-menu"></span>
             </button>
-            <input class="border-dark bg-primary-darkest form-control d-none d-md-block w-50 ml-3 mr-2" type="text" placeholder="Search" aria-label="Search">
+            <input class="form-control col-4" type="text" placeholder="Search" aria-label="Search" style="margin-left:5%">
                 <div class="dropdown d-none d-md-block">
                 @if(\Auth::user())
                 <button class="btn btn-link btn-link-primary dropdown-toggle" id="navbar-dropdown" data-toggle="dropdown">
@@ -66,7 +66,7 @@
     <div style="min-height: 100%" class="flex-row d-flex align-items-stretch m-0">
         <div class="polished-sidebar bg-light col-12 col-md-3 col-lg-2 p-0 collapse d-md-inline" id="sidebar-nav">
             <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
-              <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" />
+              <input class="border-dark form-control d-block d-md-none mb-4 col-6" type="text" placeholder="Test" aria-label="Search" />
               <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
               <div class="d-block d-md-none">
                   <div class="dropdown-divider"></div>

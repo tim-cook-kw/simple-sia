@@ -13,7 +13,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = \App\Student::paginate(4);
+        
+        $student = \App\Student::paginate(5);
 
         return view('admin.student.index', ['student' => $student]);
     }
@@ -36,10 +37,11 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+    
         $student = new \App\Student;
 
         $student->full_name = $request->get('full_name');
-        $student->gender = json_encode($request->get('gender'));
+        $student->gender = $request->get('gender');
         $student->place_of_birth = $request->get('place_of_birth');
         $student->birth = $request->get('birth');
         $student->phone = $request->get('phone');
@@ -48,7 +50,6 @@ class StudentController extends Controller
         $student->nasionality = $request->get('nasionality');
         $student->address = $request->get('address');
         $student->country = $request->get('country');
-        $student->state = $request->get('state');
         $student->zip = $request->get('zip');
         $student->save();
 
@@ -64,7 +65,9 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = \App\Student::findOrFail($id);
+
+        return view('admin.student.show', ['student' => $student]);
     }
 
     /**
@@ -75,7 +78,9 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = \App\Student::findOrFail($id);
+
+        return view('admin.student.edit', ['student' => $student]);
     }
 
     /**
@@ -87,7 +92,22 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student = \App\Student::findOrFail($id);
+
+        $student->full_name = $request->get('full_name');
+        $student->gender = $request->get('gender');
+        $student->place_of_birth = $request->get('place_of_birth');
+        $student->birth = $request->get('birth');
+        $student->phone = $request->get('phone');
+        $student->email = $request->get('email');
+        $student->religion = $request->get('religion');
+        $student->nasionality = $request->get('nasionality');
+        $student->address = $request->get('address');
+        $student->country = $request->get('country');
+        $student->zip = $request->get('zip');
+        $student->save();
+
+        return redirect()->route('student.index')->with('status', 'Student succesfully updated');
     }
 
     /**
@@ -98,6 +118,8 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = \App\Student::findOrFail($id);
+        $student->delete();
+        return redirect()->route('student.index')->with('status', 'User student successfully delete');
     }
 }
