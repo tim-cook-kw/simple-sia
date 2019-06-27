@@ -68,6 +68,9 @@
             <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
               <input class="border-dark form-control d-block d-md-none mb-4 col-6" type="text" placeholder="Test" aria-label="Search" />
               <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
+              <li><a href="{{route('student.index')}}"><span class="oi oi-people"></span>Student</a></li>
+              <li><a href="{{route('teacher.index')}}"><span class="oi oi-people"></span>Teacher</a></li>
+
               <div class="d-block d-md-none">
                   <div class="dropdown-divider"></div>
                   <li><a href="#"> Profile</a></li>
