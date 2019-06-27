@@ -22,7 +22,12 @@ Route::match(["GET", "POST"], "/register", function(){
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// ROUTE STUDENT
 Route::resource('student', 'StudentController');
 Route::post('student/create', 'StudentController@store'); 
 
+//ROUTE TEACHER
 Route::resource('teacher', 'TeacherController');
+
+//ROUTE SUBJECT
+Route::resource('subject', 'SubjectController');
