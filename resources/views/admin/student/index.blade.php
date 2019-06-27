@@ -1,12 +1,12 @@
 @extends("layouts.global")
-@section("title") User Student List @endsection 
+@section("title") User Student List @endsection
 @section("content")
 
 @if(session('status'))
   <div class="alert alert-success">
     {{session('status')}}
   </div>
-@endif 
+@endif
 <div class="row">
   <div class="col-md-12">
     <form action="{{route('student.index')}}">
@@ -21,12 +21,12 @@
   </div>
     </form>
   </div>
-</div> 
+</div>
 
 <table class="table table-bordered">
         <thead>
           <tr>
-            <th><b>No.</b></th>            
+            <th><b>No.</b></th>
             <th><b>Full Name</b></th>
             <th><b>Gender</b></th>
             <th><b>Place of Birth</b></th>
@@ -55,8 +55,9 @@
                 <td>{{$std->nasionality}}</td>
                 <td>{{$std->address}}</td>
                 <td>{{$std->country}}</td>
-                <td>{{$std->zip}}</td>   
+                <td>{{$std->zip}}</td>
                 <td>
+                    <div class="btn-group">
                   <a class="btn btn-info text-white btn-sm" href="{{route('student.edit', ['id'=>$std->id])}}">Edit</a>
                   <a href="{{route('student.show', ['id' => $std->id])}}" class="btn btn-primary btn-sm">Detail</a>
                   <form onsubmit="return confirm('Delete this user student permanently?')" class="d-inline" action="{{route('student.destroy', ['id' => $std->id ])}}" method="POST">
@@ -64,9 +65,10 @@
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="submit" value="Delete" class="btn btn-danger btn-sm">
                   </form>
+                </div>
                 </td>
             </tr>
-          @endforeach 
+          @endforeach
         </tbody>
       </table>
       <div class="row">
@@ -74,4 +76,4 @@
           {{ $student->links() }}
         </div>
       </div>
-@endsection 
+@endsection

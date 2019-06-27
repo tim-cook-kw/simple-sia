@@ -37,7 +37,7 @@
 
 <body>
     <nav class="navbar navbar-expand p-0">
-        <a class="navbar-brand text-center col-xs-12 col-md-3 col-lg-2 mr-0" href="index.html"> Sistem Informasi Akademik </a>
+        <a class="navbar-brand text-center col-xs-12 col-md-3 col-lg-2 mr-0 small" href="index.html"> Sistem Informasi Akademik </a>
             <button class="btn btn-link d-block d-md-none" data-toggle="collapse" data-target="#sidebar-nav" role="button" >
                 <span class="oi oi-menu"></span>
             </button>
@@ -47,7 +47,7 @@
                 <button class="btn btn-link btn-link-primary dropdown-toggle" id="navbar-dropdown" data-toggle="dropdown">
                     {{Auth::user()->name}}
                 </button>
-                @endif 
+                @endif
             <div class="dropdown-menu dropdown-menu-right" id="navbar-dropdown">
                 <a href="#" class="dropdown-item">Profile</a>
                 <a href="#" class="dropdown-item">Setting</a>
@@ -64,7 +64,7 @@
 
   <div class="container-fluid h-100 p-0">
     <div style="min-height: 100%" class="flex-row d-flex align-items-stretch m-0">
-        <div class="polished-sidebar bg-light col-12 col-md-3 col-lg-2 p-0 collapse d-md-inline" id="sidebar-nav">
+        <div class="polished-sidebar bg-light col-6 col-md-2 col-lg-1 p-0 collapse d-md-inline" id="sidebar-nav">
             <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
               <input class="border-dark form-control d-block d-md-none mb-4 col-6" type="text" placeholder="Test" aria-label="Search" />
               <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
@@ -89,7 +89,7 @@
               <div class="col-md-12 pl-3 pt-2">
                   <div class="pl-3">
                       <h3>@yield("pageTitle")</h3>
-                      <br/  
+                      <br/
                   </div>
               </div>
             </div>
