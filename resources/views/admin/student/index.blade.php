@@ -8,7 +8,7 @@
   </div>
 @endif 
 <div class="row">
-    <div class="col-md-12">
+  <div class="col-md-12">
     <form action="{{route('student.index')}}">
         <div class="input-group mb-5">
         <input value="{{Request::get('keyword')}}" name="keyword" class="form-control col-md-10" type="text" placeholder="Filter berdasarkan email"/>
@@ -16,9 +16,13 @@
                 <input type="submit" value="Filter" class="btn btn-primary">
             </div>
         </div>
+          <div class="col-6">
+        <a href="{{route('student.create')}}" class="btn btn-primary mb-3" style="margin-left:-10px; margin-top:-30px;">Create User Student</a>
+  </div>
     </form>
-    </div>
-</div>
+  </div>
+</div> 
+
 <table class="table table-bordered">
         <thead>
           <tr>
