@@ -11,10 +11,15 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         
         $student = \App\Student::paginate(5);
+        $filterKeyword = $request->get('keyword');
+
+        if($filterKeyword){
+            $student = \App\Student::where('email', 'LIKE', "%$filterKeyword%")->paginate(5);
+        }
 
         return view('admin.student.index', ['student' => $student]);
     }
